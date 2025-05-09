@@ -161,9 +161,9 @@ const WasteMonitorDashboard = () => {
             <p className="waste-type-label">{wasteType}</p>
             <div className="waste-type-icon">
               {wasteData.trash === 1 ? 
-                <div className="wet-waste-icon"></div> : 
-                wasteData.trash === 0 ? 
                 <div className="dry-waste-icon"></div> : 
+                wasteData.trash === 0 ? 
+                <div className="wet-waste-icon"></div> : 
                 <div className="unknown-waste-icon"></div>
               }
             </div>
@@ -224,7 +224,7 @@ const WasteMonitorDashboard = () => {
             <div className="stat-row">
               <div className="stat-label">Capacity Remaining:</div>
               <div className="stat-value">
-                {(maxCapacity - Math.abs(wasteData.weight)).toFixed(1)} kg
+                {(maxCapacity - Math.abs(wasteData.weight)).toFixed(1)} gm
               </div>
             </div>
             <div className="stat-row">
