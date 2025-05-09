@@ -16,8 +16,8 @@ const WasteMonitorDashboard = () => {
   const [connectionStatus, setConnectionStatus] = useState('connected');
 
   // Define waste type: Trash = 1 means Wet Waste, Trash = 0 means Dry Waste
-  const wasteType = wasteData.trash === 1 ? 'Wet Waste' : 
-                   wasteData.trash === 0 ? 'Dry Waste' : 
+  const wasteType = wasteData.trash === 1 ? 'dry Waste' : 
+                   wasteData.trash === 0 ? 'wet Waste' : 
                    'Unknown';
   
   // Calculate fill percentage (assuming max weight capacity is 100kg)
@@ -152,7 +152,7 @@ const WasteMonitorDashboard = () => {
       
       <div className="dashboard-grid">
         {/* Waste Type Card */}
-        <div className={`dashboard-card waste-type-card ${wasteData.trash === 1 ? 'wet-waste' : wasteData.trash === 0 ? 'dry-waste' : 'unknown-waste'}`}>
+        <div className={`dashboard-card waste-type-card ${wasteData.trash === 1 ? 'dry-waste' : wasteData.trash === 0 ? 'wet-waste' : 'unknown-waste'}`}>
           <div className="card-header">
             <Trash2 className="card-icon" />
             <h2>Waste Type</h2>
@@ -177,7 +177,7 @@ const WasteMonitorDashboard = () => {
             <h2>Weight</h2>
           </div>
           <div className="card-content">
-            <p className="weight-value">{Math.abs(wasteData.weight)} kg</p>
+            <p className="weight-value">{Math.abs(wasteData.weight)} gm</p>
             <div className="fill-level-container">
               <div className="fill-level-label">
                 <span>Fill Level: {fillPercentage.toFixed(0)}%</span>
@@ -237,7 +237,7 @@ const WasteMonitorDashboard = () => {
             </div>
             <div className="stat-row">
               <div className="stat-label">Waste Type:</div>
-              <div className={`stat-value waste-type-${wasteData.trash === 1 ? 'wet' : wasteData.trash === 0 ? 'dry' : 'unknown'}`}>
+              <div className={`stat-value waste-type-${wasteData.trash === 1 ? 'dry' : wasteData.trash === 0 ? 'wet' : 'unknown'}`}>
                 {wasteType}
               </div>
             </div>
